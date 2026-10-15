@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Inter, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Illustration of the Solside browser: tabs, bookmarks sidebar, page, and AI assistant panel"><title>Solside browser illustration</title><defs>
+<linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC56B"/><stop offset="1" stop-color="#FF7A45"/></linearGradient>
+<linearGradient id="vi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A5CFF"/><stop offset="1" stop-color="#4A2FE0"/></linearGradient>
+<linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A1F7A"/><stop offset="1" stop-color="#14102E"/></linearGradient></defs>
+<rect x="2" y="2" width="996" height="616" rx="16" fill="#0F0D24" stroke="#3A2F8F" stroke-width="2"/>
+<rect x="2" y="2" width="996" height="44" rx="16" fill="#171335"/><rect x="2" y="30" width="996" height="16" fill="#171335"/>
+<circle cx="26" cy="24" r="6" fill="#FF7A45"/><circle cx="46" cy="24" r="6" fill="#FFB454"/><circle cx="66" cy="24" r="6" fill="#7A5CFF"/>
+<path d="M96 46v-8a8 8 0 018-8h150a8 8 0 018 8v8z" fill="#241D55"/><text x="116" y="42" font-size="12" fill="#F4F1FF">Solar docs</text>
+<path d="M266 46v-8a8 8 0 018-8h130a8 8 0 018 8v8z" fill="#1B1640"/><text x="286" y="42" font-size="12" fill="#9B93C9">Inbox</text>
+<text x="420" y="42" font-size="14" fill="#9B93C9">+</text>
+<rect x="2" y="46" width="996" height="40" fill="#241D55"/>
+<g stroke="#9B93C9" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M24 66h14M30 60l-6 6 6 6"/><path d="M62 66h14M70 60l6 6-6 6"/><path d="M104 62a7 7 0 107 4M111 58v5h-5"/></g>
+<rect x="132" y="55" width="520" height="22" rx="11" fill="#120F2B" stroke="#3A2F8F"/><text x="152" y="70" font-size="12" fill="#C9BBFF">https://example.com/solar</text>
+<path d="M670 56l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" transform="translate(0 -3)" fill="none" stroke="#FFB454" stroke-width="1.6" stroke-linejoin="round"/>
+<rect x="2" y="86" width="190" height="532" fill="#120F2B"/><rect x="192" y="86" width="1" height="532" fill="#2A2266"/>
+<rect x="16" y="100" width="22" height="22" rx="6" fill="url(#vi)"/><circle cx="29" cy="111" r="4.5" fill="url(#sun)"/>
+<text x="46" y="117" font-size="15" font-weight="700" fill="#F4F1FF">Sol<tspan fill="#FFB454">side</tspan></text>
+<rect x="16" y="136" width="160" height="30" rx="8" fill="url(#vi)"/><text x="96" y="156" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">+ New tab</text>
+<text x="16" y="192" font-size="10" fill="#7F77B8" letter-spacing="1.2">BOOKMARKS</text>
+<g font-size="12" fill="#D8D1FF"><rect x="16" y="202" width="160" height="26" rx="6" fill="#1B1640"/><circle cx="30" cy="215" r="5" fill="#7A5CFF"/><text x="44" y="219">Solar docs</text>
+<circle cx="30" cy="243" r="5" fill="#FFB454"/><text x="44" y="247">Research notes</text><circle cx="30" cy="271" r="5" fill="#9D86FF"/><text x="44" y="275">Team calendar</text></g>
+<text x="16" y="318" font-size="10" fill="#7F77B8" letter-spacing="1.2">RECENT TASKS</text>
+<g font-size="11" fill="#B6AEE6"><text x="16" y="342">Summarize this page</text><text x="16" y="366">Find pricing section</text><text x="16" y="390">Fill the search box</text></g>
+<rect x="193" y="86" width="465" height="532" fill="url(#pg)"/>
+<circle cx="425" cy="330" r="150" fill="none" stroke="#9D86FF" stroke-opacity=".25"/><circle cx="425" cy="330" r="105" fill="none" stroke="#9D86FF" stroke-opacity=".3"/>
+<circle cx="425" cy="330" r="48" fill="url(#sun)"/><g stroke="url(#sun)" stroke-width="5" stroke-linecap="round"><path d="M425 250v-18M425 410v18M345 330h-18M505 330h18M368 273l-12-12M482 387l12 12M482 273l12-12M368 387l-12 12"/></g>
+<rect x="230" y="118" width="190" height="16" rx="8" fill="#F4F1FF" opacity=".9"/><rect x="230" y="146" width="300" height="9" rx="4.5" fill="#9B93C9" opacity=".6"/><rect x="230" y="164" width="260" height="9" rx="4.5" fill="#9B93C9" opacity=".4"/>
+<rect x="230" y="510" width="120" height="80" rx="10" fill="#241D55"/><rect x="362" y="510" width="120" height="80" rx="10" fill="#241D55"/><rect x="494" y="510" width="130" height="80" rx="10" fill="#241D55"/>
+<rect x="244" y="526" width="60" height="8" rx="4" fill="#7A5CFF"/><rect x="376" y="526" width="60" height="8" rx="4" fill="#FFB454"/><rect x="508" y="526" width="60" height="8" rx="4" fill="#9D86FF"/>
+<rect x="658" y="86" width="340" height="532" fill="#120F2B"/><rect x="658" y="86" width="1" height="532" fill="#2A2266"/>
+<text x="676" y="116" font-size="13" font-weight="700" fill="#F4F1FF">AI assistant</text><text x="982" y="116" font-size="10" fill="#7F77B8" text-anchor="end">Solar</text>
+<rect x="746" y="136" width="236" height="44" rx="12" fill="url(#vi)"/><text x="762" y="156" font-size="12" fill="#fff">Summarize this page</text><text x="762" y="171" font-size="12" fill="#fff">and list the key points.</text>
+<rect x="676" y="198" width="276" height="112" rx="12" fill="#1B1640"/><g font-size="12" fill="#D8D1FF"><text x="692" y="220">• Solar-themed demo page</text><text x="692" y="240">• Three sections: intro, usage,</text><text x="700" y="256">and links</text><text x="692" y="276">• No pricing on this page</text></g>
+<text x="676" y="336" font-size="11" fill="#FFB454" font-family="ui-monospace, Menlo, monospace">▸ click  #search  ✓</text><text x="676" y="356" font-size="11" fill="#7F77B8" font-family="ui-monospace, Menlo, monospace">▸ type   "solar"  ✓</text>
+<rect x="676" y="540" width="236" height="52" rx="12" fill="#0B0A1F" stroke="#3A2F8F"/><text x="692" y="570" font-size="12" fill="#7F77B8">Ask or give a task…</text>
+<rect x="920" y="552" width="62" height="28" rx="8" fill="url(#sun)"/><text x="951" y="570" font-size="12" font-weight="700" fill="#2A1200" text-anchor="middle">Send</text>
+</svg>

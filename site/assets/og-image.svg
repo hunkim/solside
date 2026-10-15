@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Inter, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Solside — an AI browser themed on Solar"><title>Solside</title><defs>
+<radialGradient id="glow" cx="75%" cy="110%" r="70%"><stop offset="0" stop-color="#FF7A45" stop-opacity=".6"/><stop offset=".4" stop-color="#7A5CFF" stop-opacity=".35"/><stop offset="1" stop-color="#0B0B1A" stop-opacity="0"/></radialGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A5CFF"/><stop offset="1" stop-color="#3E24D6"/></linearGradient>
+<linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC56B"/><stop offset="1" stop-color="#FF7A45"/></linearGradient></defs>
+<rect width="1200" height="630" fill="#0B0B1A"/><rect width="1200" height="630" fill="url(#glow)"/>
+<g fill="none" stroke="#9D86FF" stroke-opacity=".3"><ellipse cx="900" cy="640" rx="260" ry="200"/><ellipse cx="900" cy="640" rx="400" ry="310"/><ellipse cx="900" cy="640" rx="560" ry="430"/></g>
+<circle cx="900" cy="470" r="70" fill="url(#sun)"/><g stroke="url(#sun)" stroke-width="7" stroke-linecap="round"><path d="M900 380v-30M810 470h-30M990 470h30M836 406l-24-24M964 406l24-24"/></g>
+<g transform="translate(80 90) scale(1.5)"><rect width="64" height="64" rx="15" fill="url(#bg)"/><rect x="9" y="12" width="9" height="40" rx="3" fill="#fff" opacity=".22"/><g stroke="url(#sun)" stroke-width="3" stroke-linecap="round"><path d="M38 17.5v-4M38 46.5v4M23.5 32h-4M52.5 32h4M48.3 21.7l2.8-2.8M48.3 42.3l2.8 2.8M27.7 21.7l-2.8-2.8M27.7 42.3l-2.8 2.8"/></g><circle cx="38" cy="32" r="11" fill="url(#sun)"/></g>
+<text x="200" y="165" font-size="76" font-weight="700" letter-spacing="-2" fill="#F4F1FF">Sol<tspan fill="#FFB454">side</tspan></text>
+<text x="80" y="330" font-size="52" font-weight="700" fill="#F4F1FF">A browser with a</text><text x="80" y="392" font-size="52" font-weight="700" fill="#C9BBFF">Solar-powered side panel.</text>
+<text x="80" y="460" font-size="26" fill="#9B93C9">Tabs · bookmarks · AI assistant · agent actions</text>
+<text x="80" y="570" font-size="20" fill="#7F77B8">Unofficial hobby prototype · design inspired by Upstage Solar</text></svg>

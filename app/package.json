@@ -1,0 +1,55 @@
+{
+  "name": "solside",
+  "version": "0.1.0",
+  "description": "Solside AI browser (Electron): tabs, bookmarks, AI agent side panel",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . ",
+    "start:nosandbox": "electron . --no-sandbox",
+    "check": "node --check main.js && node --check preload.js && node --check agent.js && node --check renderer/app.js",
+    "smoke": "node smoke-test.js",
+    "dist:mac": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dmg --arm64 --x64 --publish never"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^26.15.3"
+  },
+  "author": "Solside",
+  "build": {
+    "appId": "com.solside.app",
+    "productName": "Solside",
+    "files": [
+      "main.js",
+      "preload.js",
+      "agent.js",
+      "renderer/**/*",
+      "package.json",
+      "!**/.env",
+      "!**/.env.*",
+      "!screenshot.png",
+      "!smoke-test.js",
+      "!dist/**"
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "category": "public.app-category.productivity",
+      "identity": null,
+      "icon": "build/icon.png"
+    },
+    "dmg": {
+      "sign": false
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
