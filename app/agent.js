@@ -13,11 +13,18 @@ function loadEnv() {
 }
 loadEnv();
 
-const cfg = () => ({
-  base: (process.env.AI_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, ''),
-  key: process.env.AI_API_KEY || '',
-  model: process.env.AI_MODEL || 'upstage/solar-pro4',
-});
+// Key sources, in priority: saved in-app settings > UPSTAGE_API_KEY (Upstage API) > AI_API_KEY (OpenRouter / any OpenAI-compatible).
+let saved = {};
+const setSaved = (s) => { saved = s || {}; };
+const cfg = () => {
+  const key = saved.key || process.env.UPSTAGE_API_KEY || process.env.AI_API_KEY || '';
+  const upstage = !!(saved.key || process.env.UPSTAGE_API_KEY) && !process.env.AI_BASE_URL;
+  return {
+    base: (process.env.AI_BASE_URL || (upstage ? 'https://api.upstage.ai/v1' : 'https://openrouter.ai/api/v1')).replace(/\/$/, ''),
+    key,
+    model: saved.model || process.env.AI_MODEL || (upstage ? 'solar-pro2' : 'upstage/solar-pro4'),
+  };
+};
 
 const TOOLS = [
   ['get_page_text', 'Read visible text and interactive elements (with numeric ids) of the current page.', {}],
@@ -47,7 +54,7 @@ async function chat(messages, tools) {
 
 // host: { getPageText(), click(id), type(id,text,submit), scroll(dir), navigate(url) }
 async function runAgent({ history, userText, host, onStep, maxSteps = 12 }) {
-  if (!cfg().key) throw new Error('AI_API_KEY가 설정되지 않았습니다. .env 파일에 AI_API_KEY를 넣고 앱을 다시 실행하세요.');
+  if (!cfg().key) throw new Error('API 키가 설정되지 않았습니다. 우측 패널의 ⚙ 설정에서 UPSTAGE_API_KEY를 입력하세요.');
   const messages = [{ role: 'system', content: SYSTEM }, ...history, { role: 'user', content: userText }];
   const steps = [];
   for (let i = 0; i < maxSteps; i++) {
@@ -76,4 +83,4 @@ async function runAgent({ history, userText, host, onStep, maxSteps = 12 }) {
   return { answer: '(최대 단계 수에 도달했습니다)', steps };
 }
 
-module.exports = { runAgent, cfg };
+module.exports = { runAgent, cfg, setSaved };

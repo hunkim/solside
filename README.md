@@ -2,7 +2,7 @@
 
 Upstage Solar 기반 AI 브라우저 프로토타입(Electron)과 랜딩 사이트입니다. Aside에서 영감을 받은 비공식 프로젝트입니다.
 
-- `app/`: Electron 앱. `cd app && npm install && cp .env.example .env`(AI_API_KEY 입력) 후 `npm start`.
+- `app/`: Electron 앱. `cd app && npm install && cp .env.example .env`(UPSTAGE_API_KEY 입력, 또는 앱의 ⚙ 설정에서 입력) 후 `npm start`.
 - `site/`: 정적 랜딩 사이트와 Node 서버(`node server.js`). 다운로드 파일은 `site/downloads/`에 두며 저장소에는 포함하지 않습니다.
 
 ## 맥에서 서명된 DMG 빌드

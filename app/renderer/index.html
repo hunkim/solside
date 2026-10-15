@@ -15,7 +15,8 @@
   </div>
  </main>
  <section id="panel">
-  <div class="phead"><b>AI 어시스턴트</b><span id="model"></span></div>
+  <div class="phead"><b>AI 어시스턴트</b><span id="model"></span><button id="gear" title="설정">⚙</button></div>
+  <div id="settings" class="notice" hidden><label>UPSTAGE_API_KEY<input id="keyin" type="password" placeholder="up_..." autocomplete="off"></label><label>모델<input id="modelin" placeholder="solar-pro2"></label><div><button id="savecfg" class="primary">저장</button> <button id="clearkey">키 삭제</button></div></div>
   <div id="notice" class="notice" hidden></div>
   <div id="chat"></div>
   <div class="quick"><button id="sum">이 페이지 요약</button></div>

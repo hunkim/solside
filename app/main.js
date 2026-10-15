@@ -1,7 +1,7 @@
-const { app, BrowserWindow, WebContentsView, ipcMain, session } = require('electron');
+const { app, BrowserWindow, WebContentsView, ipcMain, session, safeStorage } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const { runAgent, cfg } = require('./agent');
+const { runAgent, cfg, setSaved } = require('./agent');
 
 let win, tabs = [], activeId = null, nextId = 1;
 let layout = { sidebar: 220, panel: 360 };
@@ -112,7 +112,25 @@ function registerIpc() {
   });
   ipcMain.handle('bm:remove', (_, url) => { const b = bmStore.read().filter(x => x.url !== url); bmStore.write(b); win.webContents.send('bookmarks', b); sendTabs(); });
   ipcMain.handle('task:list', () => taskStore.read().slice(0, 30));
+  const cfgStore = store('config.json', {});
+  const loadSaved = () => {
+    const c = cfgStore.read(); let key = '';
+    try { if (c.key) key = c.enc ? safeStorage.decryptString(Buffer.from(c.key, 'base64')) : c.key; } catch {}
+    setSaved({ key, model: c.model || '' });
+  };
+  loadSaved();
   ipcMain.handle('ai:config', () => ({ hasKey: !!cfg().key, model: cfg().model, base: cfg().base }));
+  ipcMain.handle('ai:save', (_, { key, model }) => {
+    const c = cfgStore.read();
+    if (typeof key === 'string' && key.trim()) {
+      const k = key.trim();
+      if (safeStorage.isEncryptionAvailable()) { c.key = safeStorage.encryptString(k).toString('base64'); c.enc = true; }
+      else { c.key = k; c.enc = false; }
+    } else if (key === '') { delete c.key; delete c.enc; }
+    if (typeof model === 'string') c.model = model.trim();
+    cfgStore.write(c); loadSaved();
+    return { hasKey: !!cfg().key, model: cfg().model };
+  });
   ipcMain.handle('layout:set', (_, l) => { layout = { ...layout, ...l }; layoutViews(); });
   const history = [];
   ipcMain.handle('ai:ask', async (_, text, mode) => {

@@ -26,3 +26,4 @@ textarea{flex:1;background:#0B0A1F;border:1px solid #3A2F8F;border-radius:8px;co
 button.primary{background:linear-gradient(135deg,#7A5CFF,#4A2FE0);border-color:#7A5CFF}.msg.user{background:linear-gradient(135deg,#7A5CFF,#4A2FE0)}
 #form button.primary{background:linear-gradient(135deg,#FFC56B,#FF7A45);border-color:#FF7A45;color:#2A1200;font-weight:700}
 .tab.active{box-shadow:inset 0 -2px #FFB454}
+#settings label{display:block;margin:4px 0;font-size:12px}#settings input{width:100%;box-sizing:border-box;margin-top:2px;padding:6px;border-radius:6px;border:1px solid #3a3470;background:#0e0c22;color:#fff}.phead #gear{margin-left:8px;background:none;border:0;color:#cfc8ff;cursor:pointer;font-size:16px}

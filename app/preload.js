@@ -9,6 +9,7 @@ contextBridge.exposeInMainWorld('api', {
   bookmarks: () => inv('bm:list'), bookmarkToggle: () => inv('bm:toggle'), bookmarkRemove: (u) => inv('bm:remove', u),
   tasks: () => inv('task:list'),
   aiConfig: () => inv('ai:config'),
+  aiSave: (s) => inv('ai:save', s),
   aiAsk: (text, mode) => inv('ai:ask', text, mode),
   setLayout: (l) => inv('layout:set', l),
   onTabs: (cb) => ipcRenderer.on('tabs', (_, d) => cb(d)),

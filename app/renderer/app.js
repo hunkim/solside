@@ -30,10 +30,17 @@ $('#star').onclick = api.bookmarkToggle;
 $('#addr').addEventListener('keydown', e => { if (e.key === 'Enter') { api.navigate(e.target.value); e.target.blur(); } });
 addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 't') api.tabNew(); if ((e.ctrlKey || e.metaKey) && e.key === 'l') { $('#addr').focus(); $('#addr').select(); } });
 
-api.aiConfig().then(c => {
+function applyCfg(c) {
   $('#model').textContent = c.model;
-  if (!c.hasKey) { const n = $('#notice'); n.hidden = false; n.textContent = 'AI_API_KEY가 설정되지 않았습니다. 프로젝트 폴더의 .env 파일(.env.example 참고)에 AI_API_KEY를 넣고 앱을 다시 실행하세요.'; }
-});
+  const n = $('#notice');
+  n.hidden = c.hasKey;
+  if (!c.hasKey) n.textContent = 'API 키가 없습니다. ⚙ 설정에서 UPSTAGE_API_KEY를 입력하세요.';
+  if (c.hasKey) $('#settings').hidden = true;
+}
+api.aiConfig().then(c => { applyCfg(c); if (!c.hasKey) $('#settings').hidden = false; $('#modelin').placeholder = c.model; });
+$('#gear').onclick = () => { $('#settings').hidden = !$('#settings').hidden; };
+$('#savecfg').onclick = async () => { const r = await api.aiSave({ key: $('#keyin').value, model: $('#modelin').value }); $('#keyin').value = ''; applyCfg(r); add('step', '설정을 저장했습니다.'); };
+$('#clearkey').onclick = async () => { applyCfg(await api.aiSave({ key: '' })); };
 function add(cls, text) { const d = document.createElement('div'); d.className = 'msg ' + cls; d.textContent = text; $('#chat').appendChild(d); $('#chat').scrollTop = 1e9; }
 api.onStep(s => add('step', `› ${s.tool}(${JSON.stringify(s.args)}) → ${s.result.slice(0, 80).replace(/\n/g, ' ')}`));
 async function ask(text, mode) {

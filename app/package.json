@@ -1,6 +1,6 @@
 {
   "name": "solside",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Solside AI browser (Electron): tabs, bookmarks, AI agent side panel",
   "main": "main.js",
   "scripts": {
