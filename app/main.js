@@ -16,6 +16,22 @@ const store = (name, def) => {
   };
 };
 let bmStore, taskStore;
+function initUpdater() {
+  if (!app.isPackaged) return;
+  try {
+    const { autoUpdater } = require('electron-updater');
+    autoUpdater.autoDownload = true;
+    autoUpdater.on('update-downloaded', (info) => {
+      const { dialog } = require('electron');
+      dialog.showMessageBox(win, { type: 'info', buttons: ['지금 재시작', '나중에'], defaultId: 0,
+        message: `Solside ${info.version} 업데이트가 준비됐습니다.`, detail: '재시작하면 새 버전이 적용됩니다.' })
+        .then(r => { if (r.response === 0) autoUpdater.quitAndInstall(); });
+    });
+    autoUpdater.on('error', () => {});
+    autoUpdater.checkForUpdates().catch(() => {});
+    setInterval(() => autoUpdater.checkForUpdates().catch(() => {}), 6 * 3600 * 1000);
+  } catch {}
+}
 
 const toUrl = (s) => {
   s = (s || '').trim();
@@ -154,6 +170,7 @@ app.whenReady().then(() => {
   registerIpc();
   win.on('resize', layoutViews);
   win.webContents.once('did-finish-load', () => {
+    initUpdater();
     newTab(process.env.ASIDE_START_URL || 'https://www.google.com');
     sendTasks(); win.webContents.send('bookmarks', bmStore.read());
     if (process.env.ASIDE_SHOT) setTimeout(async () => {

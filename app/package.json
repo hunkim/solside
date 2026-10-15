@@ -1,6 +1,6 @@
 {
   "name": "solside",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Solside AI browser (Electron): tabs, bookmarks, AI agent side panel",
   "main": "main.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "start:nosandbox": "electron . --no-sandbox",
     "check": "node --check main.js && node --check preload.js && node --check agent.js && node --check renderer/app.js",
     "smoke": "node smoke-test.js",
-    "dist:mac": "electron-builder --mac dmg --arm64 --x64 --publish never"
+    "dist:mac": "electron-builder --mac dmg zip --arm64 --x64 --publish never"
   },
   "license": "MIT",
   "devDependencies": {
@@ -55,6 +55,16 @@
     },
     "directories": {
       "output": "dist"
-    }
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "hunkim",
+        "repo": "solside"
+      }
+    ]
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
   }
 }
