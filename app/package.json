@@ -8,7 +8,7 @@
     "start:nosandbox": "electron . --no-sandbox",
     "check": "node --check main.js && node --check preload.js && node --check agent.js && node --check renderer/app.js",
     "smoke": "node smoke-test.js",
-    "dist:mac": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dmg --arm64 --x64 --publish never"
+    "dist:mac": "electron-builder --mac dmg --arm64 --x64 --publish never"
   },
   "license": "MIT",
   "devDependencies": {
@@ -42,11 +42,16 @@
         }
       ],
       "category": "public.app-category.productivity",
-      "identity": null,
-      "icon": "build/icon.png"
+      "identity": "Sunghun Kim (9S7XU72M4Z)",
+      "icon": "build/icon.png",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "notarize": false
     },
     "dmg": {
-      "sign": false
+      "sign": true
     },
     "directories": {
       "output": "dist"

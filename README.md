@@ -7,3 +7,6 @@ Upstage Solar 기반 AI 브라우저 프로토타입(Electron)과 랜딩 사이�
 
 ## 맥에서 서명된 DMG 빌드
 `cd app && npm run dist:mac`. Developer ID 인증서가 키체인에 있으면 자동 서명됩니다. 공증은 `APPLE_ID`, `APPLE_APP_SPECIFIC_PASSWORD`, `APPLE_TEAM_ID` 환경변수를 사용하세요. 비밀 값은 코드에 넣지 마세요.
+
+## 다운로드
+서명·공증된 DMG는 [Releases](https://github.com/hunkim/solside/releases)에 있습니다. Vercel 배포는 Root Directory를 `site`로 지정하세요.

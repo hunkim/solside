@@ -7,23 +7,14 @@
 <h1>Download Solside for macOS</h1>
 <p>Solside is an AI browser prototype with tabs, bookmarks and an agent side panel. Version 0.1.0.</p>
 <div class="card"><h2>Apple Silicon (M1/M2/M3/M4) <small>— recommended</small></h2>
-<p><a class="btn sun" href="/downloads/Solside-arm64.zip" download>Download Solside-arm64.zip</a> <small>94.5 MB — recommended</small></p>
-<p><small>SHA-256:</small><br><code>d71e83889cb3f4c935ec9c797859a2e753b95998a2412f16953b3c7e85186f36</code></p>
-<p><a class="btn ghost" href="/downloads/Solside-arm64.dmg" download>Download Solside-arm64.dmg</a> <small>95.5 MB — disk image (HFS+, untested on a real Mac)</small></p>
-<p><small>SHA-256:</small><br><code>08a8e77d3f090ea8adbf63ec99f84565117dfd0b691683e5141d95932b7c0a32</code></p></div>
+<p><a class="btn sun" href="https://github.com/hunkim/solside/releases/download/v0.1.0/Solside-arm64.dmg">Download Solside-arm64.dmg</a> <small>95 MB — signed &amp; notarized</small></p>
+<p><small>SHA-256:</small><br><code>cc2473b64aa36812917c2f95d670294855f743adbb053d9cc04a83317e4a2da1</code></p></div>
 <div class="card"><h2>Intel Mac</h2>
-<p><a class="btn ghost" href="/downloads/Solside-x64.zip" download>Download Solside-x64.zip</a> <small>99.0 MB — recommended</small></p>
-<p><small>SHA-256:</small><br><code>152b2476c97ff80da70ca300ba6c3cad8f2953318453907d96925548c465b5f8</code></p>
-<p><a class="btn ghost" href="/downloads/Solside-x64.dmg" download>Download Solside-x64.dmg</a> <small>100.0 MB — disk image (HFS+, untested on a real Mac)</small></p>
-<p><small>SHA-256:</small><br><code>11b36b2cbb341c22fb13e3dddfe33e436345ad129d6985170f8364164827161f</code></p></div>
-<p><small>Not sure? Apple menu → About This Mac: "Apple M…" means Apple Silicon, "Intel" means Intel. Verify with <code>shasum -a 256 ~/Downloads/Solside-arm64.zip</code>.</small></p>
-<h2 id="install">Install</h2><ol><li>Easiest: double-click the <b>.zip</b> (Safari/Finder unzips it) and drag <b>Solside.app</b> into Applications. With the <b>.dmg</b>, open it and drag <b>Solside.app</b> onto <b>Applications</b>.</li>
- <b>Solside.app</b> onto <b>Applications</b>.</li>
-<li>The app is <b>not signed or notarized</b>, so macOS Gatekeeper may block it. Either right-click the app in Applications and choose <b>Open</b>, then <b>Open</b> again, or run in Terminal:
-<pre>xattr -cr "/Applications/Solside.app"</pre></li>
-<li>If macOS says the app is "damaged" or it will not launch (Apple Silicon needs a valid code signature), re-sign it locally with an ad-hoc signature:
-<pre>codesign --force --deep --sign - "/Applications/Solside.app"</pre></li>
-<li>For AI features set <code>AI_API_KEY</code> (and optionally <code>AI_BASE_URL</code>, <code>AI_MODEL</code>) in the environment.</li></ol>
-<p><small>The .dmg is an HFS+ disk image built on Linux and has not been tested on a real Mac. If it does not open, use the .zip.</small></p>
+<p><a class="btn ghost" href="https://github.com/hunkim/solside/releases/download/v0.1.0/Solside-x64.dmg">Download Solside-x64.dmg</a> <small>102 MB — signed &amp; notarized</small></p>
+<p><small>SHA-256:</small><br><code>cf0bb2f2dc0d0d43b38ffbe71bcfef66fbfb1f343a15228147bed917a1a15ad0</code></p></div>
+<p><small>Not sure? Apple menu → About This Mac: "Apple M…" means Apple Silicon, "Intel" means Intel. Verify with <code>shasum -a 256 ~/Downloads/Solside-arm64.dmg</code>.</small></p>
+<h2 id="install">Install</h2><ol><li>Open the <b>.dmg</b> and drag <b>Solside.app</b> onto <b>Applications</b>.</li>
+<li>Solside is signed with an Apple Developer ID and notarized, so it opens normally. If macOS asks, choose <b>Open</b>.</li>
+<li>For AI features set <code>AI_API_KEY</code> (and optionally <code>AI_BASE_URL</code>, <code>AI_MODEL</code>) in the environment, for example by starting the app from Terminal.</li></ol>
 <h2 id="about">About</h2><p>Solside is a hobby prototype. Pages other than home and download are not available.</p>
 <footer id="disclaimer"><div><b>Disclaimer:</b> Solside is an unofficial hobby project, provided as is, without warranty. It is not affiliated with or endorsed by Upstage. The agent can act on logged-in sites, so use it with care.</div></footer></div></body></html>
